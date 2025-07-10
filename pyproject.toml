@@ -3,6 +3,9 @@ name = "manufac-assignment"
 version = "0.1.0"
 description = "India Metro Fuel-Price Time-Series API using FastAPI and Pandas"
 authors = ["Your Name <your.email@example.com>"]
+packages = [
+    { include = "manufac_assignment" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"

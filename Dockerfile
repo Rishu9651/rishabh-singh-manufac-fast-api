@@ -10,13 +10,14 @@ RUN pip install --no-cache-dir poetry
 # Copy pyproject.toml and poetry.lock
 COPY pyproject.toml poetry.lock ./
 
+# Copy app code
+COPY manufac_assignment ./manufac_assignment
+COPY data ./data
+
 # Install dependencies
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-# Copy app code
-COPY manufac_assignment ./manufac_assignment
-COPY data ./data
 
 # Expose port
 EXPOSE 8000
