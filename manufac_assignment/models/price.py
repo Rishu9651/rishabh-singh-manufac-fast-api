@@ -5,9 +5,13 @@ class PricePoint(BaseModel):
     price: float
     unit: str
 
-class MovingAveragePoint(PricePoint):
+class MovingAveragePoint(BaseModel):
+    date: str
+    price: float
     ma: float
 
-class AnomalyPoint(PricePoint):
+class AnomalyPoint(BaseModel):
+    date: str
+    price: float
     z: float
-    isAnomaly: bool 
+    isAnomaly: bool

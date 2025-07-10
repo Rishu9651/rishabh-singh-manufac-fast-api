@@ -30,7 +30,7 @@ def get_moving_average(filtered, window_days):
         {
             'date': row['date'].strftime('%Y-%m-%d'),
             'price': row['price'],
-            'unit': row['unit'],
+            # 'unit': row['unit'],
             'ma': row['ma']
         }
         for _, row in filtered.iterrows()
@@ -45,7 +45,7 @@ def get_anomalies(filtered, window_days, z_thresh):
         {
             'date': row['date'].strftime('%Y-%m-%d'),
             'price': row['price'],
-            'unit': row['unit'],
+            # 'unit': row['unit'],
             'z': row['z'],
             'isAnomaly': bool(row['isAnomaly'])
         }

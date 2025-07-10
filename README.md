@@ -27,11 +27,11 @@ A FastAPI-based service for daily retail Petrol & Diesel prices in Delhi, Mumbai
 ## Docker Usage
 1. **Build the image:**
    ```sh
-   docker build -t metro-fuel-api .
+   docker build -t manufac_assignment .
    ```
 2. **Run the container:**
    ```sh
-   docker run -p 8000:8000 metro-fuel-api
+   docker run -p 8000:8000 manufac-assignment
    ```
 3. **Access the API docs:**
    - Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)

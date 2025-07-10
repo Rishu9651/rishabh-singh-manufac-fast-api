@@ -7,7 +7,7 @@ def load_fuel_data():
         'date': 'Calendar Day',
         'city': 'Metro Cities',
         'product': 'Products ',  
-        'price': 'Retail Selling Price (Rsp) Of Petrol And Diesel'
+        'price': 'Retail Selling Price (Rsp) Of Petrol And Diesel (UOM:INR/L(IndianRupeesperLitre)), Scaling Factor:1'
     }
     raw_df = pd.read_csv(CSV_PATH).fillna(0)
     df = pd.DataFrame({
