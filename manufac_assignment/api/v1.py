@@ -11,6 +11,7 @@ router = APIRouter()
 df = load_fuel_data()
 CITIES, PRODUCTS = get_cities_products(df)
 
+# Returns raw price data for a given city, product, and optional date range
 @router.get("/ts/raw", response_model=List[PricePoint])
 def get_raw(
     city: str = Query(..., enum=CITIES),
@@ -21,6 +22,7 @@ def get_raw(
     filtered = filter_data(df, city, product, from_, to)
     return get_raw_points(filtered)
 
+# Returns moving average price data for a given city, product, and window size
 @router.get("/ts/ma", response_model=List[MovingAveragePoint])
 def get_ma(
     city: str = Query(..., enum=CITIES),
@@ -33,6 +35,7 @@ def get_ma(
     filtered = filter_data(df, city, product, from_, to)
     return get_moving_average(filtered, days)
 
+# Returns anomaly-flagged price data for a given city, product, window size, and z-score threshold
 @router.get("/ts/anomaly", response_model=List[AnomalyPoint])
 def get_anomaly(
     city: str = Query(..., enum=CITIES),

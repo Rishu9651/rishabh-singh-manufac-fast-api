@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+# Load and standardize the fuel price data from the CSV file as a DataFrame
 def load_fuel_data():
     CSV_PATH = os.path.join(os.path.dirname(__file__), '../../data/Retail Selling Price (RSP) of Petrol and Diesel in Metro Cities.csv')
     RAW_COLS = {
